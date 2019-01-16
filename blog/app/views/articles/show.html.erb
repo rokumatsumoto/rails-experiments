@@ -1,0 +1,43 @@
+<!-- <p>This is a special page.</p>
+
+<% content_for :special_script do %>
+  <script>alert('Hello!')</script>
+<% end %> -->
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+<!--<%= Time.zone.now.to_formatted_s(:long)   %> -->
+
+<!-- <%= select_date(Time.zone.today + 6.days) %> -->
+
+<!-- # less than a minute
+<%= distance_of_time_in_words(Time.zone.now, Time.zone.now + 15.seconds) %> -->
+
+
+<!-- <% my_hash = { 'first' => 1, 'second' => 'two', 'third' => [1,2,3] } %>
+<%= debug(my_hash) %> -->
+
+<!-- <%= button_tag "Save", data: { confirm: "Are you sure?" } %> -->
+
+<!-- <%= number_to_currency(33.50, :locale => :tr) %> -->
+
+<!-- <%= sanitize @article.text %> -->
+
