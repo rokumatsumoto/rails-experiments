@@ -5,21 +5,50 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  # collation: tr_TR.UTF-8
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: blog_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: blog_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: blog_production
+  username: <%= ENV['BLOG_DATABASE_USERNAME'] %>
+  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+
+
+  # `myDB` is your database
+  # `OWNER = "myself"` is your role (default is your username, or check psql \du)
+
+  # tip: when Postgres is installed, it automatically creates a database user that matches your username,
+  # so that you can get started right away.
+
+  # locale-gen tr_TR.UTF-8
+
+  # dump into file
+  # pg_dump myDB > /tmp/myDB.sql
+
+  # # create an empty db with the right encoding (on older versions the escaped single quotes are needed!)
+  # psql -c 'CREATE DATABASE "tempDB" WITH OWNER = "myself" LC_COLLATE = '\''tr_TR.UTF-8'\'' LC_CTYPE = '\''tr_TR.UTF-8'\''  TEMPLATE template0;'
+
+  # # import in the new DB
+  # psql -d tempDB -1 -f /tmp/myDB.sql
+
+  # # rename databases
+  # psql -c 'ALTER DATABASE "myDB" RENAME TO "myDB-wrong-encoding";'
+  # psql -c 'ALTER DATABASE "tempDB" RENAME TO "myDB";'
+
+  # # see the result
+  # psql myDB -c "SHOW LC_COLLATE"
