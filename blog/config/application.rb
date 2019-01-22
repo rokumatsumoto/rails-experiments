@@ -17,5 +17,6 @@ module Blog
 
     # rails time:zones
     config.time_zone = 'Istanbul'
+    config.i18n.default_locale = :tr
   end
 end

@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <li>
+   <%= link_to t('devise.sessions.edit.log_out'), destroy_user_session_path, method: :delete %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path  %>
+  </li>
+<% end %>
+
+

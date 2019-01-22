@@ -1,8 +1,5 @@
 class ArticlesController < ApplicationController
-
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-
-
+  before_action :authenticate_user!, except: %i[index show]
   def index
     @articles = Article.all
     respond_to do |format|
@@ -25,7 +22,6 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
   end
-
 
   def create
     @article = Article.new(article_params)

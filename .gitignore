@@ -12,11 +12,11 @@ rerun.txt
 pickle-email-*.html
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
-blog/config/initializers/secret_token.rb
 blog/config/master.key
-blog/config/credentials.yml.enc
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
+# https://www.engineyard.com/blog/rails-encrypted-credentials-on-rails-5.2
+# config/initializers/secret_token.rb
 # config/secrets.yml
 
 # dotenv
