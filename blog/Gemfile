@@ -43,6 +43,8 @@ gem 'devise', '~> 4.5.0'
 gem 'devise-i18n', '~> 1.7.1'
 gem 'pundit', '~> 2.0.1'
 
+gem 'bootstrap', '~> 4.2.1'
+
 group :development, :test do
   gem 'pry-byebug', '~> 3.6.0', platform: :mri
   # call `rails r pry-rails` instead `rails console r pry-rails`
