@@ -16,6 +16,9 @@
  // https://guides.rubyonrails.org/asset_pipeline.html#manifest-files-and-directives
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
+ // @import url('https://fonts.googleapis.com/css?family=Sarabun');
+ // $font-family-base: 'Sarabun', sans-serif;
+ // $font-family-base, $font-size-base, $line-height-base
  @import "bootstrap";
  // @import "custom.min";
 
