@@ -1,11 +1,7 @@
-<% if user_signed_in? %>
-  <li>
-   <%= link_to t('devise.registrations.edit.title', :resource => current_user.model_name.human), edit_user_registration_path %>
-  </li>
+<% if user_signed_in? -%>
+   <%= link_to t("devise.registrations.edit.#{title}", :resource => "#{resource}"), edit_user_registration_path, class:"#{css_class}" %>
 <% else %>
-  <li>
-  <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path  %>
-  </li>
-<% end %>
+  <%= link_to t("devise.registrations.new.#{sign_up}"), new_user_registration_path, class:"#{css_class}"  %>
+<% end -%>
 
 

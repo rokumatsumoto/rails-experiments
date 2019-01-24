@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-default navbar-dark navbar-expand-lg">
   <div class="container">
     <%= link_to image_tag("robotic.svg", height: "36", width: "36"), root_path, class: "navbar-brand" %>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
          <a class="nav-link" href="#">HIZLI PAYLAŞ</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link" href="#">ÜYE OL</a>
+         <%= render partial: 'devise/menu/registration_items', locals: { css_class: 'nav-link', title: 'title_up_case', sign_up: 'sign_up_up_case', resource: current_user.try(:model_name).try(:human).try(:upcase) } %>
        </li>
      </ul>
      <ul class="navbar-nav">
@@ -22,7 +22,7 @@
          <input class="form-control mr-sm-2 rounded-pill" type="text" placeholder="Ara">
        </li>
        <li class="nav-item">
-         <a class="nav-link" href="#">GİRİŞ</a>
+         <%= render partial: 'devise/menu/login_items', locals: { css_class: 'nav-link', log_out: 'log_out_up_case', sign_in: 'sign_in_up_case'  } %>
        </li>
      </form>
    </ul>

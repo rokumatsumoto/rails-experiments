@@ -14,13 +14,10 @@
 
   <body>
     <%= render 'layouts/navigation' %>
-    <div class="container-fluid">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <ul class="hmenu">
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-      </ul>
+    <div class="container">
+      <% if notice -%>
+        <p class="notice"><%= notice %></p>
+      <% end -%>
       <%= yield %>
     </div>
   </body>

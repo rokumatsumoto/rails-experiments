@@ -1,4 +1,13 @@
-<% resource.errors.full_messages.each do |msg| %>
-  <div><%= msg %></div>
-  <br/>
+<% if resource.errors.any? %>
+<h4>Hata:</h4>
+<ul>
+  <% resource.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <div class="w-100"></div>
+  <% end %>
+</ul>
 <% end %>
+<% if alert -%>
+<h4>Hata:</h4>
+<p class="alert"><%= alert %></p>
+<% end -%>

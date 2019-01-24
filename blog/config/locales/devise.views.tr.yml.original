@@ -98,13 +98,11 @@ tr:
         currently_waiting_confirmation_for_email: 'Doğrulama için bekleniyor : %{email}'
         leave_blank_if_you_don_t_want_to_change_it: değiştirmek istemiyorsanız boş bırakın
         title: "%{resource} düzenle"
-        title_up_case: "%{resource} DÜZENLE"
         unhappy: Mutsuz
         update: Güncelle
         we_need_your_current_password_to_confirm_your_changes: değişikleri onaylamak için şu anki parolanız gerekli
       new:
-        sign_up: Üye Ol
-        sign_up_up_case: ÜYE OL
+        sign_up: Kaydol
       signed_up: Başarıyla giriş yaptınız. Hoşgeldiniz!
       signed_up_but_inactive: Kaydınız başarıyla gerçekleşti. Fakat, hesabınız aktifleştirilmediği için siteye giriş yapamadınız.
       signed_up_but_locked: Kaydınız başarıyla gerçekleşti. Fakat, hesabınız kilitlendiği için siteye giriş yapamadınız.
@@ -114,11 +112,9 @@ tr:
     sessions:
       already_signed_out: Başarıyla çıkış yapıldı.
       new:
-        sign_in: Giriş
-        sign_in_up_case: GİRİŞ
+        sign_in: Giriş Yap
       edit:
-        log_out: Çıkış
-        log_out_up_case: ÇIKIŞ
+        log_out: Çıkış Yap
       signed_in: Başarıyla giriş yapıldı.
       signed_out: Başarıyla çıkış yapıldı.
     shared:
@@ -131,8 +127,6 @@ tr:
         sign_in_with_provider: "%{provider} ile giriş yap"
         sign_up: Kaydol
       minimum_password_length:
-        one: "(en az %{count} karakter)"
-        other: "(en az %{count} karakter)"
     unlocks:
       new:
         resend_unlock_instructions: Hesap geri açma talimatlarını tekrar gönder
