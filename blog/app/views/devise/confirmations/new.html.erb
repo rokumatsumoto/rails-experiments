@@ -1,24 +1,12 @@
-<div class="container">
-  <div class="row">
-    <section>
-      <div class="card">
-        <div class="card-block">
-          <h4 class="card-title"><%= t('.resend_confirmation_instructions') %></h4>
-          <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-          <%= render 'devise/shared/error_messages', object: resource %>
-          <div class="form-group">
-            <%= f.label :email %>
-            <div class="w-100"></div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-          </div>
-          <%= f.submit t('.resend_confirmation_instructions'), class:"btn btn-primary" %>
-          <% end %>
-        </div>
-        <div class="card-footer">
-          <div class="btn-group" role="group">
-            <%= render "devise/shared/links" %>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+<%= render layout: 'shared/card_form', object: resource, locals: { show_card_footer: true } do %>
+<h4 class="card-title"><%= t('devise.confirmations.new.resend_confirmation_instructions') %></h4>
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+<%= render 'devise/shared/error_messages', object: resource %>
+<div class="form-group">
+  <%= f.label :email %>
+  <div class="w-100"></div>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+</div>
+<%= f.submit t('devise.confirmations.new.resend_confirmation_instructions'), class:"btn btn-primary" %>
+<% end %>
+<% end %>

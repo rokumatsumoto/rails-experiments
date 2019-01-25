@@ -1,24 +1,12 @@
-<div class="container">
-  <div class="row">
-    <section>
-      <div class="card">
-        <div class="card-block">
-          <h4 class="card-title"><%= t('.forgot_your_password') %></h4>
-          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-          <%= render 'devise/shared/error_messages', object: resource %>
-          <div class="form-group">
-            <%= f.label :email %>
-            <div class="w-100"></div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-          </div>
-          <%= f.submit t('.send_me_reset_password_instructions'), class:"btn btn-primary" %>
-          <% end %>
-        </div>
-        <div class="card-footer">
-          <div class="btn-group" role="group">
-            <%= render "devise/shared/links" %>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+<%= render layout: 'shared/card_form', object: resource, locals: { show_card_footer: true } do %>
+<h4 class="card-title"><%= t('devise.passwords.new.forgot_your_password') %></h4>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= render 'devise/shared/error_messages', object: resource %>
+<div class="form-group">
+  <%= f.label :email %>
+  <div class="w-100"></div>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+</div>
+<%= f.submit t('devise.passwords.new.send_me_reset_password_instructions'), class:"btn btn-primary" %>
+<% end %>
+<% end %>
