@@ -1,5 +1,4 @@
-<h1>New Article</h1>
-
+<%= render layout: 'shared/card_form', locals: { show_card_footer: false } do %>
+<h4 class="card-title"><%= t('forms.article.add.add_article') %></h4>
 <%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
+<% end %>

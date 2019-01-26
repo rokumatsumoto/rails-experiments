@@ -1,0 +1,17 @@
+ <% @articles.each do |article| %>
+ <div class="card">
+   <div class="card-block">
+     <div class="row">
+       <div class="col-md-11">
+         <div class="link_link">
+          <%= link_to article.title, article_path(article) %>
+         </div>
+         <div class="link_author">
+           <a href="#"><%= article.user_email %></a> | <span><%= distance_of_time_in_words(Time.zone.now, article.created_at, include_seconds: true) %></span> | <span><%= article.comment_count %> yorum</span>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+<% end %>
+

@@ -1,15 +1,17 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-               data: { confirm: 'Are you sure?' },
-               method: :delete %>
-</p>
+<div class="card">
+  <div class="card-block">
+    <div class="avatar">
+      <%= image_tag("user-circle-solid.svg", height: "40", width: "40") %>
+    </div>
+    <div class="float-left">
+      <a href="#"><%= comment.commenter %></a>
+      <br/>
+      <span class="comment_date"><%= distance_of_time_in_words(Time.zone.now, comment.created_at, include_seconds: true) %></span>
+    </div>
+  </div>
+  <div class="card-block">
+    <p>
+      <%= comment.body %>
+    </p>
+  </div>
+</div>

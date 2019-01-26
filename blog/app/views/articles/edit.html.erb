@@ -1,6 +1,5 @@
-
-<h1>Edit article</h1>
-
+<%= render layout: 'shared/card_form', locals: { show_card_footer: false } do %>
+<h4 class="card-title"><%= t('forms.article.edit.update') %></h4>
 <%= render 'form' %>
 
-<%= link_to 'Back', articles_path %>
+<% end %>

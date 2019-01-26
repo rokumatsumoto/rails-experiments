@@ -9,5 +9,14 @@
 <% end %>
 <% if alert -%>
 <h4>Hata:</h4>
+<% if alert.is_a?(String) %>
 <p class="alert"><%= alert %></p>
+<% else %>
+<ul>
+  <% alert.each do |msg| %>
+  <li><%= msg %></li>
+  <div class="w-100"></div>
+  <% end %>
+</ul>
+<% end -%>
 <% end -%>

@@ -1,0 +1,23 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index .card {
+  margin-bottom: .75rem;
+}
+
+.index .card-block {
+  padding-right: .5rem;
+ }
+
+.link_link {
+  font-size: 1.4rem;
+  word-break: break-word;
+  a {
+    font-weight: 600;
+  }
+}
+
+.link_author {
+  font-size: .8em;
+}

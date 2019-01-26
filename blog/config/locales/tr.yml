@@ -211,3 +211,24 @@ tr:
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: öğleden sonra
+  forms:
+    comment:
+      please_sign_in_to_comment: Görüş belirtmek için giriş yapın...
+      comment: Görüş
+      comments: Görüşler
+      add_comment: Görüş Bildir
+    article:
+      title: Başlık
+      text: İçerik
+      edit:
+        update: Güncelle
+      add:
+        new: YAZ
+        add_article: Yeni Yazı
+      remove:
+        remove_article: Yazıyı Sil
+        confirm: Yazıyı kaldırmak istediğinizden emin misiniz?
+
+
+
+
