@@ -18,10 +18,11 @@ test:
 
 production:
   <<: *default
-  database: blog_production
-  username: <%= ENV['BLOG_DATABASE_USERNAME'] %>
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
-
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
 
   # `myDB` is your database
   # `OWNER = "myself"` is your role (default is your username, or check psql \du)
