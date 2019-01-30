@@ -173,7 +173,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 6..128.
-  config.password_length = 8..128
+  config.password_length = 3..128 # TODO:8
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -207,11 +207,11 @@ Devise.setup do |config|
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
   # https://github.com/plataformatec/devise/blob/e3a00b27d19ba995891d7dd92394fe2900a789c2/lib/devise.rb#L187
-   config.maximum_attempts = 10 # Default is 20
+   config.maximum_attempts = 3 # TODO:10 # Default is 20
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   # https://github.com/plataformatec/devise/blob/e3a00b27d19ba995891d7dd92394fe2900a789c2/lib/devise.rb#L191
-  config.unlock_in = 10.minutes # Default is 1.hour
+  config.unlock_in = 1.minutes #TODO:10.minutes # Default is 1.hour
 
   # Warn on the last attempt before the account is locked.
   # https://github.com/plataformatec/devise/blob/e3a00b27d19ba995891d7dd92394fe2900a789c2/lib/devise.rb#L289
