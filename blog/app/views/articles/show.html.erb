@@ -16,7 +16,7 @@
             <%= link_to image_tag("user-circle-solid.svg", height: "40", width: "40") %>
           </div>
           <div class="float-left">
-            <a href="#"><%= @article.user.email %></a>
+            <a href="#"><%= author(@article) %></a>
             <br/>
             <span class="article_date"><%= l(@article.created_at, format: "%d %B %Y") %></span>
           </div>
@@ -27,7 +27,7 @@
               <%= @article.text %>
             </article>
           </div>
-          <%- if user_signed_in? &&  @article.user_id == current_user.id %>
+          <%- if user_signed_in? &&  @article.user == current_user %>
           <br/>
           <%= link_to t('forms.article.edit.update'), edit_article_path(@article) %>
           <%- end %>
