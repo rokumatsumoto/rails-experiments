@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PagesController < ApplicationController
   def index
     @articles = Article.joins(:user).left_outer_joins(:comments)

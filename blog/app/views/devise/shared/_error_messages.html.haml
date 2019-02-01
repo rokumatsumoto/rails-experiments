@@ -1,0 +1,15 @@
+- if resource.errors.any?
+  %h4 Hata:
+  %ul
+    - resource.errors.full_messages.each do |msg|
+      %li= msg
+      .w-100
+- if alert
+  %h4 Hata:
+  - if alert.is_a?(String)
+    %p.alert= alert
+  - else
+    %ul
+      - alert.each do |msg|
+        %li= msg
+        .w-100

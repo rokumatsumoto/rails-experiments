@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   def index

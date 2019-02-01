@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: articles
@@ -14,5 +16,5 @@ class Article < ApplicationRecord
   include ActiveModel::Serializers::Xml
   has_many :comments, dependent: :destroy
   belongs_to :user
-  validates :title, presence: true, length: {minimum: 5}
+  validates :title, presence: true, length: { minimum: 5 }
 end

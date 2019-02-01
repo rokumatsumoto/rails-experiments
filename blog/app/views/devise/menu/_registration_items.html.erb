@@ -1,7 +1,0 @@
-<% if user_signed_in? -%>
-   <%= link_to t("devise.registrations.edit.#{title}", :resource => "#{resource}"), edit_user_registration_path, class:"#{css_class}" %>
-<% else %>
-  <%= link_to t("devise.registrations.new.#{sign_up}"), new_user_registration_path, class:"#{css_class}"  %>
-<% end -%>
-
-

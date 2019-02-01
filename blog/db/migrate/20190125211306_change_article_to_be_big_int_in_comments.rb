@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeArticleToBeBigIntInComments < ActiveRecord::Migration[5.2]
   def up
     change_column :comments, :article_id, :bigint

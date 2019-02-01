@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -18,5 +20,8 @@ module Blog
     # rails time:zones
     config.time_zone = 'Istanbul'
     config.i18n.default_locale = :tr
+    config.generators do |g|
+      g.template_engine :haml
+    end
   end
 end

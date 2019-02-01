@@ -160,7 +160,6 @@ Devise.setup do |config|
   # https://github.com/plataformatec/devise/blob/e3a00b27d19ba995891d7dd92394fe2900a789c2/lib/devise.rb#L123
   # config.remember_for = 2.weeks # By default remember_for is 2.weeks.
 
-
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
 
@@ -173,7 +172,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 6..128.
-  config.password_length = 3..128 # TODO:8
+  config.password_length = 3..128 # TODO: 8
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -207,11 +206,11 @@ Devise.setup do |config|
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
   # https://github.com/plataformatec/devise/blob/e3a00b27d19ba995891d7dd92394fe2900a789c2/lib/devise.rb#L187
-   config.maximum_attempts = 3 # TODO:10 # Default is 20
+  config.maximum_attempts = 3 # TODO: 10 # Default is 20
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   # https://github.com/plataformatec/devise/blob/e3a00b27d19ba995891d7dd92394fe2900a789c2/lib/devise.rb#L191
-  config.unlock_in = 1.minutes #TODO:10.minutes # Default is 1.hour
+  config.unlock_in = 1.minutes # TODO: 10.minutes # Default is 1.hour
 
   # Warn on the last attempt before the account is locked.
   # https://github.com/plataformatec/devise/blob/e3a00b27d19ba995891d7dd92394fe2900a789c2/lib/devise.rb#L289
@@ -268,7 +267,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  config.navigational_formats = [:"*/*", "*/*", :html, :zip]  # Default is ['*/*', :html]
+  config.navigational_formats = [:"*/*", '*/*', :html, :zip] # Default is ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   # config.sign_out_via = :delete

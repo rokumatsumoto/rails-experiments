@@ -1,0 +1,10 @@
+%h3= t('forms.comment.comments_2')
+- @comments.each do |comment|
+  .d-flex
+    .avatar-small
+      = link_to image_tag "user-circle-solid.svg"
+    .side-title
+      %div
+        = link_to comment.body.truncate_words(10), article_path(comment.article, anchor: "comment-#{comment.id}")
+      %div
+        = comment.article.title.truncate_words(5)

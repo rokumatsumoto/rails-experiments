@@ -1,0 +1,19 @@
+%nav.navbar.navbar-default.navbar-dark.navbar-expand-lg
+  .container
+    = link_to image_tag("robotic.svg", height: "36", width: "36"), root_path, class: "navbar-brand"
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto
+        %li.nav-item
+          = link_to t('forms.article.add.new'), new_article_path, class: "nav-link"
+        %li.nav-item
+          %a.nav-link{:href => "#"} HIZLI PAYLAŞ
+        %li.nav-item
+          = render partial: 'devise/menu/registration_items', locals: { css_class: 'nav-link', title: 'title_up_case', sign_up: 'sign_up_up_case', resource: current_user.try(:model_name).try(:human).try(:upcase) }
+      %ul.navbar-nav
+        %li.nav-item
+          %form.form-inline.my-2.my-lg-0
+            %input.form-control.mr-sm-2.rounded-pill{:placeholder => "Ara", :type => "text"}/
+        %li.nav-item
+          = render partial: 'devise/menu/login_items', locals: { css_class: 'nav-link', log_out: 'log_out_up_case', sign_in: 'sign_in_up_case'  }

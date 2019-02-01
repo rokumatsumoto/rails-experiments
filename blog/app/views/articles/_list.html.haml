@@ -1,0 +1,15 @@
+- @articles.each do |article|
+  .card
+    .card-block
+      .row
+        .col-md-11
+          .link_link
+            = link_to article.title, article_path(article)
+          .link_author
+            %a{:href => "#"}= author(article)
+            |
+            %span= distance_of_time_in_words(Time.zone.now, article.created_at, include_seconds: true)
+            |
+            %span
+              = article.comment_count
+              yorum

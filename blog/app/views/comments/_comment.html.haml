@@ -1,0 +1,12 @@
+.card
+  %a{:name => "comment-#{comment.id}"}
+  .card-block
+    .avatar
+      = image_tag("user-circle-solid.svg", height: "40", width: "40")
+    .float-left
+      %a{:href => "#"}= commenter(comment)
+      %br/
+      %span.comment_date= distance_of_time_in_words(Time.zone.now, comment.created_at, include_seconds: true)
+  .card-block
+    %p
+      = comment.body

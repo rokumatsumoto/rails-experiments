@@ -1,0 +1,8 @@
+%section
+  .card
+    .card-block
+      .row
+        .col
+          = yield
+    - if show_card_footer
+      = render 'shared/card_form_footer'
