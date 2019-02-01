@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 unless Rails.env.production?
   desc 'Blog | convert | Convert erb files to hamlit(haml) files'
   task :erb2haml do
