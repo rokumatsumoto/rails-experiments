@@ -1,3 +1,7 @@
 = render layout: 'shared/card_form', locals: { show_card_footer: false } do
   %h4.card-title= t('forms.article.edit.update')
   = render 'form'
+  - if user_signed_in? &&  @article.user == current_user
+    %br/
+    %h4.card-title= t('forms.article.remove.remove_article')
+    %p= button_to t('forms.article.remove.remove_article'), article_path(@article), data: { confirm: t('forms.article.remove.confirm') }, method: :delete, class: "btn btn-danger"

@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def current_user_name
-    current_user.email.split('@')[0]
+    current_user.email.split('@')[0].capitalize
   end
 end

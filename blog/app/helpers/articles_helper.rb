@@ -2,6 +2,6 @@
 
 module ArticlesHelper
   def author(article)
-    article.user.email.split('@')[0]
+    article.user.email.split('@')[0].capitalize
   end
 end
