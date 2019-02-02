@@ -2,7 +2,7 @@
 
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: :destroy
-  before_action :set_comment, only: %i[create destroy]
+  before_action :set_article, only: %i[create destroy]
 
   def new; end
 
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:commenter, :body)
   end
 
-  def set_comment
+  def set_article
     @article = Article.find(params[:article_id])
   end
 end
