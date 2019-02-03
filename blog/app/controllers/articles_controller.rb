@@ -3,6 +3,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_article, only: %i[show edit update destroy]
+
   def index
     @articles = Article.all
 
@@ -54,6 +55,6 @@ class ArticlesController < ApplicationController
   end
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 end

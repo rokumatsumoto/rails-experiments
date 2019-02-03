@@ -1,1 +1,15 @@
 inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRailsVersion: 5.0
+  Exclude:
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'db/fixtures/**/*'
+    - 'db/schema.rb'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+    - 'generator_templates/**/*'
+    - 'builds/**/*'
+    - 'plugins/**/*'
+  CacheRootDirectory: tmp
