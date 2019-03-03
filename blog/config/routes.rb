@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :articles do
+  resources :articles, constraints: { id: /.*\D+.*/ } do
     resources :comments
   end
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+
+  get '*path' => redirect('/')
 end

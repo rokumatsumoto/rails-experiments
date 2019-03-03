@@ -61,4 +61,10 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 
+# Elastic Beanstalk Files
+blog/.elasticbeanstalk/*
+blog/!.elasticbeanstalk/*.cfg.yml
+blog/!.elasticbeanstalk/*.global.yml
+
 tmp.scss
+
